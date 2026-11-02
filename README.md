@@ -1,14 +1,14 @@
 # RAB Sales & Expenses System
 
-HTML / SharePoint version of `Sales_Expenses_App.accdb`, styled like NFPC SC Mngt Support System.
+HTML / SharePoint version of `Sales_Expenses_App.accdb`, laid out like NFPC SC Mngt Support System, with the RAB logo and its green · charcoal · gold colour theme (default; other themes in Settings → Personal Settings).
 Every Access table is a SharePoint list; every Access form is a page.
 
 ## Files
 | File | What it is |
 |---|---|
 | `index.html` | The page (login, side panel, top bar) |
-| `css/app.css` | All styles — base + SC Mngt theme layer (colour themes, side panel, switchboard) |
-| `js/00-config.js` | **Edit this** — Tenant ID, Client ID, Site URL, system name/logo for every user |
+| `css/app.css` | All styles — base + SC Mngt theme layer + RAB logo theme (green · charcoal · gold) |
+| `js/00-config.js` | **Edit this** — Tenant ID, Client ID, Site URL, system name/logo for every user, logo file names |
 | `js/01-core.js` | Helpers + the SharePoint list schema (tables & columns) |
 | `js/02-data.js` | Microsoft sign-in, Microsoft Graph, SharePoint lists, demo data store, users & roles |
 | `js/03-ui.js` | Form engine, grids, Excel import/export, charts |
@@ -18,6 +18,7 @@ Every Access table is a SharePoint list; every Access form is a page.
 | `js/07-pages-inquiries.js` | Incoming inquiry, inquiry list, alarms |
 | `js/08-reports.js` | Printable reports (invoice, voucher, SOA, aged, P&L, ledger) |
 | `js/09-admin-boot.js` | Employees, users, company, banks, masters, settings, switchboard, start-up |
+| `img/` | RAB logo: `rab-icon.png` (side panel / top bar), `rab-logo.png` (sign-in page, switchboard), `favicon.png` — replace the files to change the logo |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are |
 
 Keep the folder structure as it is — `index.html` loads `css/` and `js/` by relative path, and the

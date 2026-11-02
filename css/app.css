@@ -1,4 +1,4 @@
-/* RAB Sales & Expenses System — styles (base + SC Mngt theme layer) */
+/* RAB Sales & Expenses System — styles: base · SC Mngt theme layer · RAB logo theme */
   * { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --brand: #0078d4; --brand-dark: #106ebe; --brand-light: #eff6fc;
@@ -328,3 +328,47 @@ body.dark #view-home{--hm-bg:#0b1220;--hm-c:#131d33;--hm-t:#e8edf8;--hm-m:#9fb0d
   .activity-drawer{width:100%}
 }
 @media print{.activity-drawer,.activity-backdrop{display:none!important}}
+
+/* =====================================================================
+   RAB theme — colours taken from the RAB logo:
+   charcoal #212123 (letters) · RAB green #0e7a3a (shield) · gold #c9a227 (light edge)
+   ===================================================================== */
+html[data-accent=rab]{--rab-char:#212123;--rab-char-2:#2c2f2d;--rab-green:#0e7a3a;--rab-green-d:#0b4d27;--rab-gold:#c9a227;--rab-gold-l:#e6c65a;
+  --acc-1:#0b4d27;--acc-2:#0e7a3a;--acc-3:#2f9e57;--acc-soft:#eaf5ee;--acc-line:#c4e0cd;
+  --acc-grad:linear-gradient(120deg,#1f2321 0%,#0b4d27 42%,#0e7a3a 78%,#1f8f48 100%);
+  --brand:#0e7a3a;--brand-dark:#0b5e2d;--brand-light:#eaf6ee;--c1:#0e7a3a;--c2:#c9a227;--c3:#d83b01;--c4:#3d4440}
+html[data-accent=rab] body.dark{--brand-light:#12351f;--acc-soft:#1c2a22;--acc-line:#2e4a39;--c1:#3fbf6f;--c4:#9aa39e}
+/* side panel = logo charcoal, active item = green with a gold edge */
+html[data-accent=rab] body .sidebar{background:linear-gradient(180deg,#232625 0%,#181a19 100%)!important}
+html[data-accent=rab] body .sidebar .sidebar-header{border-bottom:2px solid var(--rab-gold)!important}
+html[data-accent=rab] body .sidebar .nav-item.active{background:linear-gradient(90deg,var(--rab-green-d),var(--rab-green))!important;box-shadow:inset 3px 0 0 var(--rab-gold),0 2px 8px rgba(0,0,0,.3)!important}
+html[data-accent=rab] body .sidebar .nav-group-head .gcount{background:rgba(201,162,39,.25);color:var(--rab-gold-l)}
+html[data-accent=rab] body .sidebar .nav-group-head{color:var(--rab-gold-l)!important}html[data-accent=rab] body .sidebar .nav-group-head .gname{color:var(--rab-gold-l)!important}
+html[data-accent=rab] body .sidebar .avatar{background:var(--rab-gold)!important;color:#1b1b1b!important}
+html[data-accent=rab] body .sidebar .nav-tools button{border-color:rgba(201,162,39,.5)!important}
+html[data-accent=rab] body .topbar{border-bottom:2px solid var(--rab-gold)!important}
+html[data-accent=rab] body .topbar .token-pill.ok{color:#0b5e2d}
+html[data-accent=rab] .hm-ban{border-bottom:3px solid var(--rab-gold)}
+html[data-accent=rab] .modal-head,html[data-accent=rab] .activity-header{border-bottom:2px solid var(--rab-gold)}
+html[data-accent=rab] .kpi::before{background:var(--kc,var(--rab-green))}
+html[data-accent=rab] .rec-strip{border-left:4px solid var(--rab-gold)}
+html[data-accent=rab] .sec-title{border-bottom-color:color-mix(in srgb,var(--rab-gold) 45%,transparent)}
+html[data-accent=rab] .tab.active{border-bottom-color:var(--rab-gold)}
+html[data-accent=rab] .badge.purple{background:#fbf3d6;color:#7a5c00}
+html[data-accent=rab] .login-screen{background-image:radial-gradient(circle at 20% 20%,rgba(14,122,58,.10),transparent 42%),radial-gradient(circle at 80% 80%,rgba(201,162,39,.10),transparent 42%)}
+html[data-accent=rab] .login-card{border-top:4px solid var(--rab-green)}
+html[data-accent=rab] .login-form button[type=submit]{background:linear-gradient(120deg,#0b4d27,#0e7a3a)}
+html[data-accent=rab] .login-ms{background:#eaf6ee;color:#0b5e2d}html[data-accent=rab] body.dark .login-ms{background:#12351f;color:#bfe6cc}
+/* logo tiles (white tile so the charcoal letters stay visible on dark bars) */
+[data-brand=logo].has-img{background:#fff!important;padding:3px;box-shadow:0 0 0 1px rgba(201,162,39,.55),0 2px 6px rgba(0,0,0,.25)!important;overflow:hidden}
+[data-brand=logo].has-img img{width:100%;height:100%;object-fit:contain;display:block}
+.sidebar-brand .logo.has-img{width:34px!important;height:34px!important;border-radius:8px!important}
+.tb-logo.has-img{background:#fff!important}
+.login-brand .logo.has-img{width:48px;height:48px;border-radius:12px}
+.login-logo{text-align:center;margin:-6px 0 14px}.login-logo img{height:118px;width:auto;filter:drop-shadow(0 4px 10px rgba(0,0,0,.12))}
+.login-card.has-full .login-brand{justify-content:center;text-align:center;margin-bottom:22px}.login-card.has-full .login-brand .logo{display:none}
+body.dark .login-logo img{background:#fff;border-radius:14px;padding:8px}
+.hm-ban-l{display:flex;align-items:center;gap:20px}
+.hm-logo{background:#fff;border-radius:16px;padding:10px 12px;box-shadow:0 6px 18px rgba(0,0,0,.25),0 0 0 2px rgba(201,162,39,.6)}.hm-logo img{height:86px;width:auto;display:block}
+@media (max-width:900px){.hm-logo{display:none}}
+@media print{.hm-logo{display:none}}
