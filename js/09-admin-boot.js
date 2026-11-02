@@ -324,7 +324,7 @@ async function doLogin(e) {
 }
 document.addEventListener('DOMContentLoaded', () => {
   let th = null; try { th = localStorage.getItem(SC_KEY.theme); } catch (e) {}
-  applyTheme(th || (lsGet('theme', '') === 'dark' ? 'dark' : 'light')); accentApply(accentGet()); brandApply(); if (lsGet('navMini', 0)) navMini(true);
+  applyTheme(th || (lsGet('theme', '') === 'dark' ? 'dark' : 'light')); accentApply(accentGet()); brandApply(); try { preloadDocImages(); } catch (e) {} if (lsGet('navMini', 0)) navMini(true);
   $('#loginForm').addEventListener('submit', doLogin);
   $('#msLoginBtn').onclick = async () => { try { await MS.getToken(true); $('#msLoginState').innerHTML = '✔ Connected to Microsoft 365 as <b>' + esc(MS.user()) + '</b>.'; } catch (e) { $('#msLoginState').textContent = '✘ ' + e.message; } };
   $('#logoutBtn').onclick = async () => { Activity.add('🔒', 'Signed out'); await Auth.logout(); location.hash = ''; location.reload(); };
